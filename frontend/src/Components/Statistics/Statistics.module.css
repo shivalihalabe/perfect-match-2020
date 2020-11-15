@@ -1,0 +1,72 @@
+    .mainAbout {
+        background-color: #FB6466;
+        min-height: 100%;
+        font-family: "Inter";
+    }
+    
+    .aboutHeader {
+        text-align: center;
+        font-family: "Inter";
+        color: white;
+    }
+    
+    .aboutText {
+        text-align: center;
+        font-family: "Inconsolata";
+        font-weight: bold;
+        color: white;
+    }
+    
+    .aboutText p {
+        font-size: 1vw;
+        font-family: "Inconsolata";
+        font-weight: bold;
+        color: white;
+    }
+    
+    .aboutText h3 {
+        font-size: 1.5vw;
+        font-family: "Montserrat";
+        font-weight: bold;
+        color: white;
+    }
+    
+    .btnleft {
+        color: white;
+        border-color: transparent;
+        outline: none;
+        border-right-color: #505050;
+        padding: 0px 0px;
+        font-size: 20px;
+        border-radius: 10px 0px 0px 10px;
+        width: 400px;
+        height: 32px;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .btnleft:focus {
+        outline: none;
+    }
+    
+    .btnleft:hover {
+        cursor: pointer;
+    }
+    
+    .btnright {
+        color: white;
+        border-color: transparent;
+        padding: 0px 0px;
+        font-size: 20px;
+        border-radius: 0px 10px 10px 00px;
+        width: 400px;
+        height: 32px;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .btnright:focus {
+        outline: none;
+    }
+    
+    .btnright:hover {
+        cursor: pointer;
+    }

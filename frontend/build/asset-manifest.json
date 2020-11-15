@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a572a1f6.chunk.css",
+    "main.js": "/static/js/main.51490094.chunk.js",
+    "main.js.map": "/static/js/main.51490094.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.c8c48a88.chunk.css": "/static/css/2.c8c48a88.chunk.css",
+    "static/js/2.8ffd39c3.chunk.js": "/static/js/2.8ffd39c3.chunk.js",
+    "static/js/2.8ffd39c3.chunk.js.map": "/static/js/2.8ffd39c3.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.50d331ae6d237e7dce36f5f67a202de9.js": "/precache-manifest.50d331ae6d237e7dce36f5f67a202de9.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.c8c48a88.chunk.css.map": "/static/css/2.c8c48a88.chunk.css.map",
+    "static/css/main.a572a1f6.chunk.css.map": "/static/css/main.a572a1f6.chunk.css.map",
+    "static/media/CBAFull.png": "/static/media/CBAFull.182a7335.png",
+    "static/media/Networks.png": "/static/media/Networks.ee98ba1d.png",
+    "static/media/Perfect_Match_Logo.png": "/static/media/Perfect_Match_Logo.e38bfbca.png",
+    "static/media/cbalogo.png": "/static/media/cbalogo.f77e0920.png",
+    "static/media/logo.png": "/static/media/logo.b7162c10.png"
+  }
+}

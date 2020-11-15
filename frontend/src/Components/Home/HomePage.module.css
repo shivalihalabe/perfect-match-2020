@@ -1,0 +1,137 @@
+.mainHome {
+    font-family: "Inter";
+    background-color: #FB6466;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    color: #2c2c2c;
+}
+
+.mainHomeMobile {
+    font-family: "Inter";
+    background-color: #FB6466;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    color: #2c2c2c;
+    text-align: center;
+}
+
+.mainFlex {
+    display: flex;
+    flex-wrap: nowrap;
+    /* background-color: pink; */
+    height: 100%;
+}
+
+.mainFlexContent {
+    width: 50%;
+    text-align: center;
+    color: #FFFFFF;
+    /* background-color: gray */
+}
+
+.btnxl {
+    color: white;
+    background-color: white;
+    border-color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    width: 220px;
+    height: 60px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* 
+.mainFlexLogo {
+    width: 10000px;
+    overflow: clip;
+    text-align: center;
+}
+
+.mainHome h1 {
+    
+    font-family: "Futura", sans-serif;
+    color: #707070;
+    margin-bottom: 40px;
+    font-size: 7em;
+}
+
+.mainHome h3 {
+    margin: 30px 0px;
+    color: #707070;
+    font-size: 2em;
+}
+
+.mainHome h4 {
+    color: #707070;
+}
+
+.homeTexts img {
+    width: 60%;
+    max-width: 150px;
+}
+
+.logo {
+    height: 10px
+}
+
+.loginButton {
+    position: relative;
+    height: 40px;
+    min-width: 200px;
+    background: #FFFFFF;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 2px;
+    font-family: "Futura";
+    font-size: 14px;
+    color: #707070;
+    letter-spacing: 0.22px;
+}
+
+.loginButton p {
+    padding: 0px 0px 0px 0px;
+    margin: 0;
+    display: inline-block;
+}
+
+.loginButton:hover {
+    cursor: pointer;
+    background-color: #fff2c2;
+    transition: .3s background-color, .15s color ease-out, .15s border-color ease-out;
+}
+
+.loginButton:focus {
+    outline: 5px auto rgba(207, 151, 31, 0.7)
+}
+
+.googleLogo:before {
+    content: "";
+    position: absolute;
+    background-image: url("../../Assets/web/vector/GoogleLogo.svg");
+    background-size: 100%;
+    top: 9px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.pplCount {
+    padding-bottom: 0px;
+    margin-bottom: 0;
+}
+ */
+
+
+/* FOR MOBILE */
+
+@media(max-width: 800px) {
+    .mainHome h1 {
+        font-size: 3em;
+    }
+    .logo {
+        width: 40%;
+    }
+}

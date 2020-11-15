@@ -1,0 +1,34 @@
+.mainAbout {
+    background-color: #FB6466;
+    min-height: 100%;
+    font-family: "Inter";
+}
+
+.aboutHeader {
+    text-align: center;
+    color: white;
+}
+
+.aboutText {
+    margin-left: 10%;
+    margin-right: 10%;
+    color: white;
+}
+
+.aboutText p {
+    font-size: 22px;
+    color: white;
+}
+
+.cbaHover {
+    /*padding-top: 20px;*/
+    color: #2c2c2c;
+    text-decoration: none;
+}
+
+.cbaHover:hover {
+    cursor: pointer;
+    color: #000000;
+    text-decoration: none;
+    transition: .15s color ease-out;
+}

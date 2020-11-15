@@ -1,0 +1,525 @@
+var data;
+var finalCSV;
+var padding = 25;
+var firstSvgWidth = 800;
+var firstSvgHeight = 500;
+
+/** Functions for parsing initial raw data **/
+// get results based on key (ie. data.gender) and sorts key in descending value
+
+
+function printSortMap(map) {
+    var sortedMap = new Map([...map.entries()].sort((a, b) => b[1] - a[1]));
+    var keys = Array.from(sortedMap.keys());
+    for (var i = 0; i < keys.length; i++) {
+        console.log(keys[i] + ": " + map.get(keys[i]));
+    }
+}
+
+/** Functions for building data structures **/
+var requestInitialData = async () => {
+    // TODO: change path to path of new data or backend
+
+
+    // var genderMap = getSummary("data.gender", "total_");
+
+    var ethnicityMap = {
+        "total_eastasian": 1106,
+        "total_southasian": 469,
+        "total_white": 1999,
+        "total_other": 410,
+        "total_latino": 322,
+        "total_black": 287
+    }
+    var yearMap = {
+        "total_junior": 1060,
+        "total_sophomore": 1290,
+        "total_faculty": 12,
+        "total_senior": 1046,
+        "total_freshman": 1025,
+        "total_masters": 123,
+        "total_phd": 37
+    }
+    var activitiesMap = {
+        "total_projectteam": 736,
+        "total_otherclub": 1831,
+        "total_ta": 904,
+        "total_profclub": 1172,
+        "total_greeklife": 1334,
+        "total_athlete": 406,
+        "total_proffrat": 548,
+        "total_socialclub": 1363,
+        "total_clubsports": 739,
+        "total_culturalclub": 954,
+        "total_ra": 145,
+        "total_none": 261
+    }
+    var collegeMap = {
+        "total_engineering": 1095,
+        "total_humec": 394,
+        "total_arts": 1360,
+        "total_cals": 1139,
+        "total_hotel": 235,
+        "total_ilr": 276,
+        "total_aap": 94
+    }
+
+    var finalObj = {
+        "total_junior": 1260,
+        "total_sophomore": 1496,
+        "total_faculty": 14,
+        "total_senior": 1225,
+        "total_freshman": 1351,
+        "total_masters": 182,
+        "total_phd": 59,
+        "total_eastasian": 1314,
+        "total_southasian": 576,
+        "total_white": 2469,
+        "total_other": 482,
+        "total_latino": 387,
+        "total_black": 359,
+        "total_projectteam": 891,
+        "total_otherclub": 2245,
+        "total_ta": 1069,
+        "total_profclub": 1418,
+        "total_greeklife": 1628,
+        "total_athlete": 504,
+        "total_proffrat": 643,
+        "total_socialclub": 1647,
+        "total_clubsports": 909,
+        "total_culturalclub": 1174,
+        "total_ra": 175,
+        "total_none": 321,
+        "total_engineering": 1321,
+        "total_humec": 477,
+        "total_arts": 1641,
+        "total_cals": 1365,
+        "total_hotel": 310,
+        "total_ilr": 351,
+        "total_aap": 122
+    };
+
+    finalCSV = d3.csvFormat([finalObj]);
+
+    // TODO: save finalCSV to file 
+    console.log(finalCSV)
+    requestFinalData();
+};
+
+var requestFinalData = async () => {
+    // TODO!!
+    // data = await d3.csv("location of new file");
+
+    // this is temp
+    data = d3.csvParse(finalCSV);
+    final();
+}
+
+function getTotalPeople() {
+    return +data[0]["total_freshman"] + +data[0]["total_sophomore"] + +data[0]["total_junior"] + +data[0]["total_senior"] + +data[0]["total_masters"] + +data[0]["total_phd"] + +data[0]["total_faculty"];
+}
+
+
+/** Functions for generating specific data **/
+function createYearData() {
+    return [{
+        "key": "freshman",
+        "value": data[0]["total_freshman"]
+    }, {
+        "key": "sophomore",
+        "value": data[0]["total_sophomore"]
+    }, {
+        "key": "junior",
+        "value": data[0]["total_junior"]
+    }, {
+        "key": "senior",
+        "value": data[0]["total_senior"]
+    }, {
+        "key": "masters",
+        "value": data[0]["total_masters"]
+    }, {
+        "key": "phd",
+        "value": data[0]["total_phd"]
+    }, {
+        "key": "faculty",
+        "value": data[0]["total_faculty"]
+    }];
+}
+
+function createEthnicityData() {
+    return [{
+        "key": "white",
+        "value": data[0]["total_white"]
+    }, {
+        "key": "east asian",
+        "value": data[0]["total_eastasian"]
+    }, {
+        "key": "south asian",
+        "value": data[0]["total_southasian"]
+    }, {
+        "key": "latino",
+        "value": data[0]["total_latino"]
+    }, {
+        "key": "black",
+        "value": data[0]["total_black"]
+    }, {
+        "key": "other",
+        "value": data[0]["total_other"]
+    }];
+}
+
+function createActivitiesData() {
+    return [{
+        "key": "prof. club",
+        "value": data[0]["total_profclub"]
+    }, {
+        "key": "social club",
+        "value": data[0]["total_socialclub"]
+    }, {
+        "key": "cultural club",
+        "value": data[0]["total_culturalclub"]
+    }, {
+        "key": "greek life",
+        "value": data[0]["total_greeklife"]
+    }, {
+        "key": "prof. fraternity",
+        "value": data[0]["total_proffrat"]
+    }, {
+        "key": "athlete",
+        "value": data[0]["total_athlete"]
+    }, {
+        "key": "club sports",
+        "value": data[0]["total_clubsports"]
+    }, {
+        "key": "project team",
+        "value": data[0]["total_projectteam"]
+    }, {
+        "key": "ta",
+        "value": data[0]["total_ta"]
+    }, {
+        "key": "ra",
+        "value": data[0]["total_ra"]
+    }, {
+        "key": "other clubs",
+        "value": data[0]["total_otherclub"]
+    }, {
+        "key": "none",
+        "value": data[0]["total_none"]
+    },];
+}
+
+function createCollegeData() {
+    return [{
+        "key": "aap",
+        "value": data[0]["total_aap"]
+    }, {
+        "key": "arts",
+        "value": data[0]["total_arts"]
+    }, {
+        "key": "cals",
+        "value": data[0]["total_cals"]
+    }, {
+        "key": "engineering",
+        "value": data[0]["total_engineering"]
+    }, {
+        "key": "hotel",
+        "value": data[0]["total_hotel"]
+    }, {
+        "key": "humec",
+        "value": data[0]["total_humec"]
+    }, {
+        "key": "ilr",
+        "value": data[0]["total_ilr"]
+    }];
+}
+
+
+/** Functions for generating bar graph **/
+function getBarX(data, svgWidth, xd) {
+    return d3.scaleBand()
+        .domain(data.map(function (d) {
+            return d[xd];
+        }))
+        .range([padding * 5, svgWidth - (padding * 5)])
+        .paddingInner(0.4);
+}
+
+function getBarY(data, svgHeight) {
+    return d3.scaleLinear()
+        .domain([0, d3.max(data, function (d) {
+            return +d.value;
+        })])
+        .range([svgHeight - padding * 3, padding * 2 + 100]);
+}
+
+function drawBars(svg, x, y, data, maxBarHeight, barWidth, color) {
+    // create initial bars
+    svg.selectAll(".bars")
+        .data(data)
+        .enter()
+        .append("rect")
+        .attr("x", function (d) {
+            return x(d.key);
+        })
+        .attr("y", function (d) {
+            return y(0);
+        })
+        .attr("fill", function (d) {
+            return color;
+        })
+        .attr("height", function (d) {
+            return maxBarHeight - y(0);
+        })
+        .attr("width", x.bandwidth());
+
+    // animate the bars
+    svg.selectAll("rect")
+        .transition()
+        .duration(800)
+        .attr("y", function (d) {
+            return y(d.value);
+        })
+        .attr("height", function (d) {
+            return maxBarHeight - y(d.value);
+        })
+        .delay(function (d, i) {
+            return i * 100;
+        });
+}
+
+function drawTotalText(barSvg, x, y, data, barWidth, gutter) {
+    // create total text above bar
+    barSvg.selectAll(".total_text")
+        .data(data)
+        .enter()
+        .append("text")
+        .attr("class", "total_text")
+        .text(function (d) {
+            return d.value
+        })
+        .attr("x", function (d) {
+            return x(d.key) + x.bandwidth() / 2;
+        })
+        .attr("y", function (d) {
+            return y(d.value) - gutter;
+        })
+        .style("text-anchor", "middle")
+        .style("fill", "#f8f8f8")
+        .style("font-family", "Inconsolata")
+        .style("font-size", "12px")
+        .style("font-weight", "bold")
+        .style("opacity", 0);
+
+    // animate text
+    barSvg.selectAll(".total_text")
+        .transition()
+        .duration(900)
+        .style("opacity", 1)
+        .delay(function (d, i) {
+            return i * 100;
+        });
+}
+
+function redrawXAxis(x, maxBarHeight, slantText = false) {
+    d3.selectAll(".x_axis")
+        .transition()
+        .duration(0)
+        .call(d3.axisBottom(x))
+        .attr("transform", "translate(" + 0 + ", " + (maxBarHeight) + ")");
+
+    d3.select(".domain").remove();
+
+    if (slantText) {
+        d3.selectAll(".tick text")
+            .attr("transform", "rotate(-25)")
+            .style("text-anchor", "end");
+    }
+}
+
+// code adapted from https://bl.ocks.org/mbostock/7555321
+function wrap(text, width) {
+    text.each(function () {
+        var text = d3.select(this),
+            words = text.text().split(/\s+/).reverse(),
+            word,
+            line = [],
+            lineNumber = 0,
+            lineHeight = 1.1, // ems
+            y = text.attr("y"),
+            dy = parseFloat(text.attr("dy")),
+            tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+        while (word = words.pop()) {
+            line.push(word);
+            tspan.text(line.join(" "));
+            if (tspan.node().getComputedTextLength() > width) {
+                line.pop();
+                tspan.text(line.join(" "));
+                line = [word];
+                tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+            }
+        }
+    });
+}
+
+function handleBarLegendChange(d, circle_id) {
+    d3.selectAll(circle_id)
+        .transition()
+        .duration(500)
+        .style("fill", "#f8f8f8");
+
+    d3.select("#key_" + d)
+        .transition()
+        .duration(500)
+        .style("fill", "#505050");
+}
+
+function addTotalSignupText(barSvg) {
+    barSvg.append("text")
+        .attr("x", "50%")
+        .attr("y", padding * 2)
+        .text("Currently we have ~" + getTotalPeople() + " people signed up for perfect match!")
+        .style("text-anchor", "middle")
+        .style("fill", "#f8f8f8")
+        .style("font-family", "Montserrat")
+        .style("font-size", "1.5vw")
+        .style("font-weight", "bold");
+    barSvg.append("text")
+        .attr("x", "50%")
+        .attr("y", padding * 3.5)
+        .text("Let's take a look at their breakdown:")
+        .style("text-anchor", "middle")
+        .style("fill", "#f8f8f8")
+        .style("font-family", "Montserrat")
+        .style("font-size", "1.5vw")
+        .style("font-weight", "bold");
+}
+
+function drawBarChart() {
+    var maxBarHeight = firstSvgHeight - padding * 3;
+    var barWidth = padding * 2;
+
+    var yearData = createYearData();
+    var ethnicityData = createEthnicityData();
+    var activitiesData = createActivitiesData();
+    var collegeData = createCollegeData();
+
+    /*let body = d3.select("body")
+        .attr("bgcolor", "#FB6466")
+        .style("color", "#f8f8f8")
+        .style("text-align", "center");
+
+    d3.select("body").append("svg")
+        .attr("width", firstSvgWidth)
+        .attr("height", firstSvgHeight)
+        .attr("class", "bar");
+*/
+    var barSvg = d3.select('.bar');
+
+    addTotalSignupText(barSvg)
+
+    var x = getBarX(yearData, firstSvgWidth, "key");
+    var y = getBarY(yearData, firstSvgHeight);
+
+    drawBars(barSvg, x, y, yearData, maxBarHeight, barWidth, "#A7333F");
+
+    // add x axis
+    barSvg.append("g")
+        .attr("class", "x_axis")
+        .attr("transform", "translate(" + 0 + ", " + (maxBarHeight) + ")")
+        .call(d3.axisBottom(x))
+        .style("font-family", "Inconsolata")
+        .style("font-size", "12px")
+        .select(".domain").remove();
+
+    drawTotalText(barSvg, x, y, yearData, barWidth, 5);
+
+    // key for bar chart
+    var barLegend = ["year", "ethnicity", "college", "activities"];
+
+    // create legend
+    d3.select('.bar').append("g")
+        .selectAll(".key")
+        .data(barLegend)
+        .enter()
+        .append("circle")
+        .attr("class", "legend_circles")
+        .attr('id', function (d, i) {
+            return "key_" + d;
+        })
+        .attr('cx', function (d, i) {
+            return firstSvgWidth - padding * 4;
+        })
+        .attr('cy', function (d, i) {
+            return 160 + i * 30;
+        })
+        .attr('r', 8)
+        .style('fill', '#f8f8f8')
+        .style('stroke', '#505050')
+        .style('stroke-width', 2)
+        .on('click', function (d, i) {
+            handleBarLegendChange(d, ".legend_circles");
+            barSvg.selectAll("rect").remove();
+            barSvg.selectAll(".total_text").remove();
+            if (d == "year") {
+                x = getBarX(yearData, firstSvgWidth, "key");
+                y = getBarY(yearData, firstSvgHeight);
+
+                drawBars(barSvg, x, y, yearData, maxBarHeight, barWidth, "#A7333F");
+                drawTotalText(barSvg, x, y, yearData, barWidth, 5);
+                redrawXAxis(x, maxBarHeight);
+
+            } else if (d == "ethnicity") {
+                x = getBarX(ethnicityData, firstSvgWidth, "key");
+                y = getBarY(ethnicityData, firstSvgHeight);
+
+                drawBars(barSvg, x, y, ethnicityData, maxBarHeight, barWidth, "#A7333F");
+                drawTotalText(barSvg, x, y, ethnicityData, barWidth, 5);
+                redrawXAxis(x, maxBarHeight);
+
+            } else if (d == "college") {
+                x = getBarX(collegeData, firstSvgWidth, "key");
+                y = getBarY(collegeData, firstSvgHeight);
+
+                drawBars(barSvg, x, y, collegeData, maxBarHeight, barWidth, "#A7333F");
+                drawTotalText(barSvg, x, y, collegeData, barWidth, 5);
+                redrawXAxis(x, maxBarHeight);
+
+            } else if (d == "activities") {
+                x = getBarX(activitiesData, firstSvgWidth, "key");
+                y = getBarY(activitiesData, firstSvgHeight);
+
+                drawBars(barSvg, x, y, activitiesData, maxBarHeight, barWidth, "#A7333F");
+                drawTotalText(barSvg, x, y, activitiesData, barWidth, 5);
+                redrawXAxis(x, maxBarHeight, true);
+
+            }
+        });
+
+    handleBarLegendChange("year", ".legend_circles");
+
+    // create legend labels
+    d3.select(".bar").append("g")
+        .selectAll('.key_labels')
+        .data(barLegend)
+        .enter()
+        .append('text')
+        .attr('x', function (d, i) {
+            return firstSvgWidth - padding * 4 + 20;
+        })
+        .attr('y', function (d, i) {
+            return 164 + i * 30;
+        })
+        .text(function (d) {
+            return d;
+        })
+        .style('fill', '#505050')
+        .style("font-weight", "bold")
+        .style("font-family", "Inconsolata")
+        .style("font-size", "12px");
+}
+
+requestInitialData();
+
+function final() {
+    drawBarChart();
+}

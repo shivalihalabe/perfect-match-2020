@@ -1,0 +1,135 @@
+.MainNavbar {
+    /*background-color: #f7e08d;*/
+    /* background-color: rgba(255, 200, 200, 0.9); */
+    background-color: #ffffff;
+    display: flex;
+    text-align: center;
+    align-content: center;
+    font-family: "Inter";
+    /*box-shadow: 1px 1px 15px grey;*/
+    /*border-style: none none solid none;
+    border-width: 1px;*/
+    min-height: 80px;
+}
+
+.collapseStyle {
+    align-items: flex-end
+}
+
+.NavLinks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 20px;
+}
+
+.signInButton {
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    /*color: #303c6c;*/
+    color: #000000;
+}
+
+.signIn:hover {
+    cursor: pointer;
+    color: #000000;
+    transition: .15s color ease-out;
+}
+
+.fflogo {
+    height: 40px;
+    /*widows: 35px;*/
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.brandBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.brandBox {
+    max-height: 10px;
+}
+
+.nlink p {
+    font-family: InterLight;
+    font-weight: bold;
+    font-size: 1.2em;
+    /* color: #303c6c; */
+    color: #505050;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-right: 10px;
+}
+
+.nlink p:hover {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #000000;
+    transition: .15s color ease-out;
+}
+
+.namediv {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.namediv p {
+    font-weight: bold;
+    font-size: 1.2em;
+    /* color: #303c6c; */
+    color: #000000;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.bottomNav {
+    /*background-color: #f7e08d;*/
+    /* background-color: rgba(255, 200, 200, 0.9); */
+    background-color: #ffffff;
+    color: #505050;
+    display: flex;
+    text-align: center;
+    align-content: center;
+    font-family: "InterMedium";
+    /*box-shadow: 1px 1px 15px grey;*/
+    /*border-style: none none solid none;
+    border-width: 1px;*/
+    max-height: 60px;
+}
+
+.cbaHover {
+    padding-top: 20px;
+    color: #505050;
+    text-decoration: none;
+}
+
+.cbaHoverMobile {
+    padding-top: 5px;
+    color: #505050;
+    text-decoration: none;
+}
+
+.cbaHover:hover {
+    cursor: pointer;
+    color: #000000;
+    text-decoration: none;
+    transition: .15s color ease-out;
+}
+
+
+/* FOR MOBILE */
+
+@media(max-width: 600px) {
+    .signIn {
+        padding-top: 6px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

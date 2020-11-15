@@ -1,0 +1,24 @@
+    .mainAbout {
+        background-color: #FB6466;
+        min-height: 100%;
+    }
+    
+    .aboutHeader {
+        text-align: center;
+        font-family: "Inter";
+        color: white;
+    }
+    
+    .aboutText {
+        margin-left: 10%;
+        margin-right: 10%;
+        font-family: "Inter";
+        color: white;
+    }
+    
+    .aboutText p {
+        font-weight: 600;
+        font-size: 20px;
+        font-family: "Inter";
+        color: white;
+    }

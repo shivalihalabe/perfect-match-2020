@@ -1,0 +1,71 @@
+.mainResults {
+    background-color: #FB6466;
+    min-height: 100%;
+    font-family: "Inter";
+    color: white;
+}
+
+.resultsHeader {
+    text-align: center;
+    color: white;
+}
+
+.resultsBox {
+    background-color: #f9b5ac;
+    border-color: white;
+    border-style: solid;
+    border-radius: 30px;
+    border-width: 10px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.resultsInnerBox {
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    color: #a7333f
+}
+
+.resultsText {
+    font-size: 30px;
+    color: #a7333f;
+    font-weight: bold;
+}
+
+.smallText {
+    font-size: 20px;
+    color: #a7333f;
+}
+
+.cbaHover {
+    /*padding-top: 20px;*/
+    color: #2c2c2c;
+    text-decoration: none;
+}
+
+.cbaHover:hover {
+    cursor: pointer;
+    color: #000000;
+    text-decoration: none;
+    transition: .15s color ease-out;
+}
+
+@media(max-width: 800px) {
+    .resultsBox {
+        background-color: #f9b5ac;
+        border-color: white;
+        border-style: solid;
+        border-radius: 30px;
+        border-width: 10px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    .resultsInnerBox {
+        text-align: center;
+        word-wrap: break-word;
+        margin-left: 10px;
+        margin-right: 10px;
+        color: #a7333f
+    }
+}
