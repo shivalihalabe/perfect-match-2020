@@ -13,8 +13,8 @@ These only work on Linux/Mac OS and are intended to run on an Ubuntu 18.04 Linux
 
 with options:  
 -mongo - start the mongo server  
--backend boolean - start the backend server. If boolean is true, npm i  
--frontend boolean - start the frontend server. If boolean is true, npm i  
+-backend boolean - start the backend server; if boolean is true, npm i  
+-frontend boolean - start the frontend server; if boolean is true, npm i  
 
 example: ./bootscript.sh -mongo -backend false -frontend true
 
