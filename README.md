@@ -18,9 +18,9 @@ with options:
 
 example: ./bootscript.sh -mongo -backend false -frontend true
 
-### Run for Production:
+### Run for production:
 ./prodscript.sh
 
 
-### Stop command:
+### Stop:
 killall mongod; killall node;
