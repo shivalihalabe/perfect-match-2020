@@ -3,7 +3,7 @@
 An algorithmic matchmaking quiz for Valentine's Day at Cornell. Utilizes React JS for frontend, Node JS and MongoDB for backend, and a modified version of the Gale-Shapley algorithm for pair generation. 
 
 ## Commands
-Work on Linux/Mac OS. Intended to run on an Ubuntu 18.04 Linux server.
+These only work on Linux/Mac OS and are intended to run on an Ubuntu 18.04 Linux server.
 
 ### Start from scratch:
 ./bootscript.sh -all 
